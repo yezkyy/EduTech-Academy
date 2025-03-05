@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    height: 70px;
+    width: 70px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: black; /* Warna garis bawah */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.nav-links li:hover a {
+    color: black; /* Warna teks saat hover */
+}
+
+.nav-links .active {
+    color: black;
+    font-weight: bold;
+}
+
+.signup button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    opacity: 0.8;
+}
+
+.aos-out {
+    opacity: 0 !important;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    padding-top: 100px;
+}
+
+.home-content {
+    max-width: 50%;
+}
+
+/* Highlight dengan background abu-abu */
+.highlight {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    background-color: #f3f3f3;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #222;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Tombol dengan shadow */
+.btn-primary {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+/* Gambar Home */
+.home-image img {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Section Register */
+.register {
+    text-align: center;
+    padding: 60px 80px;
+}
+
+.register h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+}
+
+.subtext {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.register-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.register-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    display: block;
+    margin-top: 15px;
+}
+
+.register-form input,
+.register-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.experience-level {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.experience-level label {
+    background: #f3f3f3;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    text-align: center;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+}
+
+.terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Tombol Register */
+.btn-register {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+/* ====== Promo Section ====== */
+.promo-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.promo-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.promo-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.promo-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 10px;
+    width: 250px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.promo-box i {
+    font-size: 25px;
+    color: #141414;
+    margin-bottom: 20px;
+}
+
+.promo-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.success-stories {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.success-stories h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.stories-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.story-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Gunakan flexbox untuk menyusun gambar + teks sejajar */
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.story-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.story-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Hapus margin default */
+}
+
+.graduate-title {
+    font-size: 14px;
+    color: #777;
+    margin: 0; /* Pastikan tidak ada margin tambahan */
+}
+
+.story-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: #1e1e1e;
+    color: #d1d1d1;
+    padding: 50px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo {
+    width: 25%;
+}
+
+.footer-logo img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #b1b1b1;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+    width: 20%;
+}
+
+.footer h4 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li,
+.footer-contact ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #b1b1b1;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #b1b1b1;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social .social-icons a {
+    color: #b1b1b1;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-social .social-icons a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #b1b1b1;
+}
